@@ -1,7 +1,7 @@
 module.exports = [
     {
       id: 1,
-      name: 'Steve Jobs',
+      sellerName: 'Steve Jobs',
       location: 'Cupertino, California',
       email: 'sjobs@apple.com',
     },
