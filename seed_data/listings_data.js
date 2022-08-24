@@ -6,7 +6,9 @@ module.exports = [
       location: 'Vancouver',
       description: 'Bought in 2000, only used onece',
       price: '5',
-      posted_at: '',
+      seller_id: 1,
+      status: '0'
+      
     },
     {
       id: 2,
@@ -15,7 +17,8 @@ module.exports = [
       location: 'Vancouver',
       description: 'Bought in 2012, slight chipping on corners',
       price: '10',
-      posted_at: '',
+      seller_id: 2,
+      status: '1'
     },
     {
       id: 3,
@@ -24,16 +27,10 @@ module.exports = [
       location: 'Surrey',
       description: 'Bought in 2008, strings replaced in 2020',
       price: '250',
-      posted_at: '',
+      
+      seller_id: 3,
+      status: '0'
     },
-    {
-      id: 4,
-      title: 'Samsung Galaxy Air Buds',
-      condition: 'Excellent',
-      location: 'Coquitlam',
-      description: 'Excellent condition, comes in original box',
-      price: '50',
-      posted_at: '',
-    }
+    
   ];
   

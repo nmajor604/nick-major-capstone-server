@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5050;
 
 const listingsRoutes = require('./routes/listingsRoute.js')
 
+app.use(express.json());
 app.use('/listings', listingsRoutes);
 
 app.listen(PORT, () => {

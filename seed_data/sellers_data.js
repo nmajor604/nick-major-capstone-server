@@ -1,19 +1,19 @@
 module.exports = [
     {
       id: 1,
-      sellerName: 'Steve Jobs',
+      name: 'John',
       location: 'Cupertino, California',
       email: 'sjobs@apple.com',
     },
     {
       id: 2,
-      name: 'Elon Musk',
+      name: 'Tom',
       location: 'Austin, Texas',
       email: 'emusk@tesla.com',
     },
     {
       id: 3,
-      name: 'Jeff Bezos',
+      name: 'Sarah',
       location: 'El Paso, Texas',
       email: 'jbezos@amazon.com',
     },

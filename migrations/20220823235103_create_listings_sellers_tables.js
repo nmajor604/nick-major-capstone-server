@@ -5,10 +5,11 @@
 exports.up = function(knex) {
     return knex.schema
     .createTable('sellers', (table) => {
-        table.increments('id').primary();
-        table.string('sellerName').notNullable();
-        table.string('location').notNullable();
-        table.string('email').notNullable();
+      table.increments('id').primary();
+      table.string('name').notNullable();
+      table.string('location').notNullable();
+      table.string('email').notNullable();
+      table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
     .createTable('listings', (table) => {
         table.increments('id').primary();
@@ -17,7 +18,6 @@ exports.up = function(knex) {
         table.string('location').notNullable();
         table.string('description').notNullable();
         table.integer('price').notNullable();
-        table.timestamp('posted_at').defaultTo(knex.fn.now());
         table
             .integer('seller_id')
             .unsigned()
@@ -28,6 +28,7 @@ exports.up = function(knex) {
             .onDelete('CASCADE');
         table.tinyint('status');
       })
+
 };
 
 /**
@@ -35,5 +36,6 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('listings').dropTable('sellers');
+    return knex.schema.dropTable('listings').dropTable('sellers');
+
 };
