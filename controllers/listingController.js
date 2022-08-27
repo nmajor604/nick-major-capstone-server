@@ -26,7 +26,7 @@ exports.singleListing = (req, res) => {
 };
 
 exports.addListing = (req, res) => {
-  if (!req.body.title || !req.body.condition || !req.body.location || !req.body.description || !req.body.price || !req.body.status) {
+  if (!req.body.title || !req.body.condition || !req.body.location || !req.body.description || !req.body.price ) {
     return res.status(400).send('All fields are required');
   }
     knex('listings')
