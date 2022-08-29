@@ -4,6 +4,13 @@
  */
 exports.up = function(knex) {
     return knex.schema
+    .createTable('buyers', (table) => {
+      table.increments('id').primary();
+      table.string('name').notNullable();
+      table.string('location').notNullable();
+      table.string('email').notNullable();
+      table.timestamp('updated_at').defaultTo(knex.fn.now());
+    })
     .createTable('sellers', (table) => {
       table.increments('id').primary();
       table.string('name').notNullable();
@@ -26,6 +33,7 @@ exports.up = function(knex) {
             .inTable('sellers')
             .onUpdate('CASCADE')
             .onDelete('CASCADE');
+        table.string('image').defaultTo("");
         table.tinyint('status');
       })
 
@@ -36,6 +44,7 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-    return knex.schema.dropTable('listings').dropTable('sellers');
+    return knex.schema.dropTable('listings').dropTable('sellers').dropTable('buyers');
 
 };
+

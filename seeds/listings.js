@@ -4,7 +4,8 @@
  */
  const listingsData = require('../seed_data/listings_data');
  const sellersData = require('../seed_data/sellers_data');
- 
+ const buyersData = require('../seed_data/buyers_data');
+
  exports.seed = function (knex) {
    return knex('listings')
      .del()
@@ -16,6 +17,12 @@
      })
      .then(() => {
        return knex('sellers').insert(sellersData);
+     })
+     .then(() => {
+      return knex('buyers').del();
+     })
+     .then(() => {
+        return knex('buyers').insert(buyersData)
      });
  };
 
